@@ -18,7 +18,7 @@ class NewscrawlerPipeline(object):
         spec = {"news_thread":item["news_thread"]}
         if item['news_source'] == 'tencent':
             NewsDB.tencent.update(spec,{"$set":dict(item)}, upsert = True)
-        else if item['news_source'] == 'sina':
+        elif item['news_source'] == 'sina':
             NewsDB.sina.update(spec,{"$set":dict(item)}, upsert = True)
         else:
             NewsDB.netease.update(spec,{"$set":dict(item)}, upsert = True)
