@@ -82,7 +82,7 @@ class sinaSpider(CrawlSpider):
         #http://mil.news.sina.com.cn/2017-06-06/doc-ifyfuzny3608195.shtml
         item['news_thread'] = response.url.strip().split('/')[-1][5:-6]
         print('news_thread:', item['news_thread'])
-        news_title = response.xpath("/html/head/title/text()").extract()
+        news_title = response.xpath("/html/head/title/text()").extract()[0]
         item['news_title'] = news_title.split('|')[0]
         print('news_title:', item['news_title'])
         item['news_source'] = 'sina'
