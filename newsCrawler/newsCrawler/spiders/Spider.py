@@ -70,7 +70,7 @@ class sinaSpider(CrawlSpider):
         Rule(
             #LinkExtractor(allow=[url_pattern]),
             #LinkExtractor(allow=r'/[cow](?:/\w{2})/(\d{4}-\d{2}-\d{2})/doc-i*\.(?:s)html'),
-            LinkExtractor(allow=r'/(\d{4}-\d{2}-\d{2})/*'),
+            LinkExtractor(allow=r'/(2017-\d{2}-\d{2})/*'),
             callback = 'parse_news',
             #follow = True
             follow = False

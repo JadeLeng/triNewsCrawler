@@ -18,7 +18,9 @@ class NewscrawlerPipeline(object):
         spec = {"news_thread":item["news_thread"]}
         if item['news_source'] == 'tencent':
             NewsDB.tencent.update(spec,{"$set":dict(item)}, upsert = True)
+        else if item['news_source'] == 'sina':
+            NewsDB.sina.update(spec,{"$set":dict(item)}, upsert = True)
         else:
-            NewsDB.new.update(spec,{"$set":dict(item)}, upsert = True)
+            NewsDB.netease.update(spec,{"$set":dict(item)}, upsert = True)
 	#print("update in mongodb")
         return None
