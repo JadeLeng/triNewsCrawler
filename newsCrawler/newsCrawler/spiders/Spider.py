@@ -67,8 +67,8 @@ class Spider(CrawlSpider):
         date = response.xpath("//div[@class = 'post_content_main']/text()").extract()[0][1:11]
         if date:
             item['news_date']=date
-        else
-            item['news_date']=time.strftime(%Y-%m-%d)
+        else:
+            item['news_date']=time.strftime("%Y-%m-%d")
 
     def get_img(self,response,item):
         news_img = response.xpath("//div[@id='endText']/p[@class='f_center']/img/@src").extract()
@@ -123,12 +123,12 @@ class sinaSpider(CrawlSpider):
         item['news_url'] = response.url
         print('news_url:', item['news_url'])
         date = response.xpath("//span[@id = 'navtimeSource']/text()").extract()[0][0:10]
-        date.replace('年','-')
-        date.replace('月','-')
+        date = date.replace('年','-')
+        date = date.replace('月','-')
         if date:
             item['news_date'] = date
         else:
-            item['news_date']=time.strftime(%Y-%m-%d)
+            item['news_date']=time.strftime("%Y-%m-%d")
         print('news_date:', item['news_date'])
 
         news_img = response.xpath("//div[@id='artibody']/div[@id='img_wrapper']/img/@src").extract()
@@ -192,7 +192,7 @@ class tencentSpider(CrawlSpider):
         if date:
             item['news_date'] = date
         else:
-            item['news_date']=time.strftime(%Y-%m-%d)
+            item['news_date']=time.strftime("%Y-%m-%d")
         print('news_date:', item['news_date'])
 
         return item
