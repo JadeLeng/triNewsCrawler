@@ -16,7 +16,7 @@ class NewscrawlerPipeline(object):
         if item.get("news_thread",None) is None:
             print("item.get(thread)=none")
             return item
-        spec = {"news_thread":item["news_thread"]}
+        spec = {"news_thread":item["news_thread"],"isClassified":False}
         dictMerged = dict(item);
         dictMerged.update(dict2);
         if item['news_source'] == 'tencent':
