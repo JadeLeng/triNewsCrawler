@@ -27,6 +27,7 @@ class triNewsClassifier():
 			neteaseClass = newsClassifier.newsClassifer(source, collection_id, title, date)
 			#neteaseClass.Classify()
 			neteaseClass.saveMongo()
+			#break
 
 	def sinaClassifier():
 		posts = NewsDB.sina.find({'isClassified':False}, {'__id':1, 'news_title':1, 'news_source':1, 'news_date':1})

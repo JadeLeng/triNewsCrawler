@@ -68,13 +68,13 @@ def Game(newsPiece):
 	NewsDB.Game.update(spec,{"$set": newsPiece}, upsert = True)
 
 def netease(self):
-	NewsDB.netease.update({"__id":self.id},{"isClassified": True})
+	NewsDB.netease.update({"_id":self.id},{"$set":{"isClassified": True}},upsert = True)
 
 def sina(self):
-	NewsDB.sina.update({"__id":self.id},{"isClassified": True})
+	NewsDB.sina.update({"_id":self.id},{"$set":{"isClassified": True}},upsert = True)
 
 def tencent(self):
-	NewsDB.tencent.update({"__id":self.id},{"isClassified": True})
+	NewsDB.tencent.update({"_id":self.id},{"$set":{"isClassified": True}},upsert = True)
 
 newsClass = {'[0]': Sports, '[1]': Education, '[2]': Fin, '[3]': Social, '[4]': Entertainment, '[5]': Military, '[6]': Domestic, '[7]': Tech, '[8]': Internet, '[9]': Property, '[10]': International, '[11]': Women, '[12]': Car, '[13]': Game,}
 sourceClass = {'netease': netease, 'sina': sina, 'tencent': tencent}
