@@ -21,14 +21,17 @@ class NewscrawlerPipeline(object):
         dictMerged.update(dict2);
         if item['news_source'] == 'tencent':
             if NewsDB.tencent.find(spec):
+                print("duplicated in tencent")
                 return
             NewsDB.tencent.update(spec,{"$set":dictMerged}, upsert = True)
         elif item['news_source'] == 'sina':
             if NewsDB.sina.find(spec):
+                print("duplicated in sina")
                 return
             NewsDB.sina.update(spec,{"$set":dictMerged}, upsert = True)
         else:
             if NewsDB.netease.find(spec):
+                print("duplicated in netease")
                 return
             NewsDB.netease.update(spec,{"$set":dictMerged}, upsert = True)
 	#print("update in mongodb")
