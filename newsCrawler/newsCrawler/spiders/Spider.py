@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import re
+import time
 from scrapy.selector import Selector
 from newsCrawler.items import newsCrawlerItem
 from scrapy.contrib.linkextractors import LinkExtractor
@@ -28,6 +29,7 @@ class Spider(CrawlSpider):
         self.get_news_from(response,item)
         self.get_from_url(response,item)
         self.get_text(response,item)
+        self.get_date(response,item)
         return item
 
     def get_title(self,response,item):
@@ -59,6 +61,14 @@ class Spider(CrawlSpider):
         news_url = response.url
         if news_url:
             item['news_url'] = news_url
+
+    def get_date(self,response,item):
+        date = response.xpath("//div[@class = 'post_content_main']/text()").extract()[0][1:11]
+        if date:
+            item['news_date']=date
+        else
+            item['news_date']=time.strftime(%Y-%m-%d)
+
 
 
 class sinaSpider(CrawlSpider):
@@ -104,6 +114,14 @@ class sinaSpider(CrawlSpider):
         print('news_body:', item['news_body'])
         item['news_url'] = response.url
         print('news_url:', item['news_url'])
+        date = response.xpath("//span[@id = 'navtimeSource']/text()").extract()[0][0:10]
+        date.replace('年','-')
+        date.replace('月','-')
+        if date:
+            item['news_date'] = date
+        else:
+            item['news_date']=time.strftime(%Y-%m-%d)
+        print('news_date:', item['news_date'])
         return item
 
     def ListCombiner(lst):
@@ -155,6 +173,13 @@ class tencentSpider(CrawlSpider):
         else:
             item['news_img'] = None
         print('news_img:', item['news_img'])
+        date = response.xpath("//span[@class = 'a_time']/text()").extract()[0][0:10]
+        if date:
+            item['news_date'] = date
+        else:
+            item['news_date']=time.strftime(%Y-%m-%d)
+        print('news_date:', item['news_date'])
+
         return item
 
 
