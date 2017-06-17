@@ -30,6 +30,7 @@ class Spider(CrawlSpider):
         self.get_from_url(response,item)
         self.get_text(response,item)
         self.get_date(response,item)
+        self.get_img(response,item)
         return item
 
     def get_title(self,response,item):
@@ -69,6 +70,13 @@ class Spider(CrawlSpider):
         else
             item['news_date']=time.strftime(%Y-%m-%d)
 
+    def get_img(self,response,item):
+        news_img = response.xpath("//div[@id='endText']/p[@class='f_center']/img/@src").extract()
+        if news_img:
+            item['news_img']= news_img
+        else:
+            item['news_img']=None
+        print('news_img:', item['news_img'])
 
 
 class sinaSpider(CrawlSpider):
@@ -122,6 +130,13 @@ class sinaSpider(CrawlSpider):
         else:
             item['news_date']=time.strftime(%Y-%m-%d)
         print('news_date:', item['news_date'])
+
+        news_img = response.xpath("//div[@id='artibody']/div[@id='img_wrapper']/img/@src").extract()
+        if news_img:
+            item['news_img'] = news_img
+        else:
+            item['news_img'] = None
+        print('news_img:', item['news_img'])
         return item
 
     def ListCombiner(lst):
