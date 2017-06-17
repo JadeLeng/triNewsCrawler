@@ -21,3 +21,4 @@ class newsCrawlerItem(scrapy.Item):
     news_source = scrapy.Field()
     news_img = scrapy.Field()
     news_date = scrapy.Field()
+    is_classified = False

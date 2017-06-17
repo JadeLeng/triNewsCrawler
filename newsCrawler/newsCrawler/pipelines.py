@@ -12,15 +12,18 @@ class NewscrawlerPipeline(object):
         #if spider.name != "news":
             #print ("spider.name!=news")
         #    return item
+        dict2 = {'isClassified':False}
         if item.get("news_thread",None) is None:
             print("item.get(thread)=none")
             return item
         spec = {"news_thread":item["news_thread"]}
+        dictMerged = dict(item);
+        dictMerged.update(dict2);
         if item['news_source'] == 'tencent':
-            NewsDB.tencent.update(spec,{"$set":dict(item)}, upsert = True)
+            NewsDB.tencent.update(spec,{"$set":dictMerged}, upsert = True)
         elif item['news_source'] == 'sina':
-            NewsDB.sina.update(spec,{"$set":dict(item)}, upsert = True)
+            NewsDB.sina.update(spec,{"$set":dictMerged}, upsert = True)
         else:
-            NewsDB.netease.update(spec,{"$set":dict(item)}, upsert = True)
+            NewsDB.netease.update(spec,{"$set":dictMerged}, upsert = True)
 	#print("update in mongodb")
         return None

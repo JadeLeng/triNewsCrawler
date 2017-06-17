@@ -64,11 +64,12 @@ class Spider(CrawlSpider):
             item['news_url'] = news_url
 
     def get_date(self,response,item):
-        date = response.xpath("//div[@class = 'post_content_main']/text()").extract()[0][1:11]
+        date = response.xpath("//div[@class = 'post_time_source']/text()").extract()[0].strip()[0:10]
         if date:
             item['news_date']=date
         else:
             item['news_date']=time.strftime("%Y-%m-%d")
+        print('newsdate:', item['news_date'])
 
     def get_img(self,response,item):
         news_img = response.xpath("//div[@id='endText']/p[@class='f_center']/img/@src").extract()
