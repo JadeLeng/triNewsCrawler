@@ -66,8 +66,13 @@ class Spider(CrawlSpider):
             item['news_url'] = news_url
 
     def get_date(self,response,item):
-        date = response.xpath("//div[@class = 'post_time_source']/text()").extract()[0].strip()[0:10]
+        date = response.xpath("//div[@class = 'post_time_source']/text()").extract()
+        print('date before strip:', date)
+        
         if date:
+            date = date[0].strip()
+            date = date.replace("\n","")
+            date = date[0:10]
             item['news_date']=date
         else:
             item['news_date']=time.strftime("%Y-%m-%d")
