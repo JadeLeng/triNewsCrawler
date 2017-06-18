@@ -33,6 +33,7 @@ class NewscrawlerPipeline(object):
             NewsDB.sina.update(spec,{"$set":dictMerged}, upsert = True)
         else:
             if "每日易乐" in item['news_title']:
+                print("drop!:",item['news_title'])
                 return
             print(NewsDB.netease.find_one(spec))
             if NewsDB.netease.find_one(spec):
