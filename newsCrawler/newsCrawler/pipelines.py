@@ -32,7 +32,7 @@ class NewscrawlerPipeline(object):
                 return
             NewsDB.sina.update(spec,{"$set":dictMerged}, upsert = True)
         else:
-            print(NewsDB.netease.find(spec))
+            print(NewsDB.netease.find_one(spec))
             if NewsDB.netease.find_one(spec):
                 print(spec)
                 print("duplicated in netease")
