@@ -10,7 +10,7 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 
 class Spider(CrawlSpider):
     name = "news"
-    allowed_domains = ["news.163.com"]
+    allowed_domains = ["163.com"]
     start_urls = ['http://news.163.com']
     rules = (
             Rule(
@@ -21,6 +21,7 @@ class Spider(CrawlSpider):
             )
 
     def parse_news(self,response):
+        print("url is :",response.url)
         item = newsCrawlerItem()
         item['news_thread'] = response.url.strip().split('/')[-1][:-5]
         self.get_title(response,item)
@@ -31,6 +32,7 @@ class Spider(CrawlSpider):
         self.get_text(response,item)
         self.get_date(response,item)
         self.get_img(response,item)
+
         return item
 
     def get_title(self,response,item):
