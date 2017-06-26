@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");  
 
