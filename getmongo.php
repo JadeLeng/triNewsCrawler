@@ -1,7 +1,7 @@
 <?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
 
-$collection = isset($_GET['collection']) ? $_GET['collection'] : 'International';
+$collection = isset($_POST['collection']) ? $_POST['collection'] : 'International';
 
 $queryname = 'NewsDB.'.$collection;
 
