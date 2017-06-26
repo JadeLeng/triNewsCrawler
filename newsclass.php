@@ -24,10 +24,11 @@ $arr = array();
 $temp = array();
 
 foreach ($cursor as $document) {
-	$title = $document['title'];
-	if (in_array(array('title',$title), $arr))
-		continue;
+	$title = $document->title;
 
+	if (in_array($title, $temp))
+		continue;
+	array_push($temp,$temp);
 	array_push($arr,$document);
 	$i++;
 	if ($i==200)
