@@ -1,5 +1,10 @@
 <?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
+
+$collection = isset($_GET['collection']) ? $_GET['collection'] : 'International';
+
+$queryname = 'NewsDB.'.$collection;
+
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");  
 
 // 插入数据
@@ -12,7 +17,7 @@ $options = [
 
 // 查询数据
 $query = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery('NewsDB.International', $query);
+$cursor = $manager->executeQuery($queryname, $query);
 
 $i = 0;
 $arr = array();
