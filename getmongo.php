@@ -13,7 +13,13 @@ $options = [
 $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery('NewsDB.International', $query);
 
+$i = 0
+$arr = []
+
 foreach ($cursor as $document) {
-    print_r($document);
+	array_push($arr,$document);
+    //print_r($document);
 }
+echo json_encode($arr,JSON_UNESCAPED_UNICODE);//json编码  
+
 ?>
