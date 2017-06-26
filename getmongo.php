@@ -1,11 +1,19 @@
 <?php
-$m = new MongoClient();    // 连接到mongodb
-$db = $m->NewsDB;            // 选择一个数据库
-$collection = $db->netease; // 选择集合
+$manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");  
 
-$cursor = $collection->find();
-// 迭代显示文档标题
+// 插入数据
+
+
+$filter = [ ];
+$options = [
+     
+];
+
+// 查询数据
+$query = new MongoDB\Driver\Query($filter, $options);
+$cursor = $manager->executeQuery('NewsDB.netease', $query);
+
 foreach ($cursor as $document) {
-	echo $document["title"] . "\n";
+    print_r($document);
 }
 ?>
