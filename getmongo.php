@@ -14,10 +14,13 @@ $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery('NewsDB.International', $query);
 
 $i = 0
-$arr = []
+$arr = array();
 
 foreach ($cursor as $document) {
 	array_push($arr,$document);
+	$i++;
+	if ($i==10)
+		break;
     //print_r($document);
 }
 echo json_encode($arr,JSON_UNESCAPED_UNICODE);//json编码  
