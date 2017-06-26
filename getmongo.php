@@ -21,9 +21,10 @@ $cursor = $manager->executeQuery($queryname, $query);
 
 $i = 0;
 $arr = array();
+$temp = array();
 
 foreach ($cursor as $document) {
-	$title = $cursor['title'];
+	$title = $document['title'];
 	if (in_array(array('title',$title), $arr))
 		continue;
 
