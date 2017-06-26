@@ -14,7 +14,7 @@ $options = [
 $query = new MongoDB\Driver\Query($filter, $options);
 $cursor = $manager->executeQuery('NewsDB.International', $query);
 
-$i = 0
+$i = 0;
 $arr = array();
 
 foreach ($cursor as $document) {
