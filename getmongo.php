@@ -24,7 +24,7 @@ $arr = array();
 
 foreach ($cursor as $document) {
 	$title = $cursor['title'];
-	if in_array(array('title',$title), $arr)
+	if (in_array(array('title',$title), $arr))
 		continue;
 
 	array_push($arr,$document);
