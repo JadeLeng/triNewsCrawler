@@ -4,7 +4,7 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 // 插入数据
 
 
-$filter = [ ];
+$filter = ['isClassified'=>'false'];
 $options = [
      
 ];
