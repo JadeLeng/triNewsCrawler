@@ -4,14 +4,14 @@ $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");
 // 插入数据
 
 
-$filter = ['isClassified'=>'false'];
+$filter = ['isClassified'=>false];
 $options = [
-     
+     'sort'=>['date'=>-1],
 ];
 
 // 查询数据
 $query = new MongoDB\Driver\Query($filter, $options);
-$cursor = $manager->executeQuery('NewsDB.netease', $query);
+$cursor = $manager->executeQuery('NewsDB.International', $query);
 
 foreach ($cursor as $document) {
     print_r($document);
