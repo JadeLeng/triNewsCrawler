@@ -2,7 +2,7 @@
 <?php
 $db_host = '120.24.57.3';
 $db_name = 'BS';
-$db_user = 'root';
+$db_user = 'hello';
 $db_pwd = '250.250.';
 
 
@@ -19,7 +19,7 @@ if(!$mysqli ){
     echo mysqli_connect_error();
 }
 $sql = "INSERT INTO account (usrname, pwd, email)VALUES (".$usrname.", ".$pwd.", ".$email.")";
-
+echo $sql;
 
 $result = $mysqli->query("set names utf8");
 $result = $mysqli->query($sql);
