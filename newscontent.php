@@ -5,7 +5,9 @@ $collection = isset($_POST['collection']) ? $_POST['collection'] : 'netease';
 
 $queryname = 'NewsDB.'.$collection;
 
-$id = isset($_POST['oid'])? isset($_POST['oid']): '5950a6982f911cb7b881ffda';
+$id = isset($_POST['oid'])? $_POST['oid']: '5950a6982f911cb7b881ffda';
+
+
 
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");  
 
