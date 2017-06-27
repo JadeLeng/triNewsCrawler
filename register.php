@@ -18,8 +18,8 @@ $mysqli = new mysqli($db_host, $db_user, $db_pwd, $db_name);
 if(!$mysqli ){
     echo mysqli_connect_error();
 }
-$sql = "INSERT INTO account (usrname, pwd, email)VALUES (".$usrname.", ".$pwd.", ".$email.")";
-echo $sql;
+$sql = "INSERT INTO account (usrname, pwd, email)VALUES (`".$usrname."`, `".$pwd."`, `".$email."`)";
+//echo $sql;
 
 $result = $mysqli->query("set names utf8");
 $result = $mysqli->query($sql);
