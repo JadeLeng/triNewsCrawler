@@ -11,25 +11,25 @@ CREATE TABLE `account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `cashacc`;
+DROP TABLE IF EXISTS `likeacc`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `cashacc` (
+CREATE TABLE `likeacc` (
   `usrname` varchar(32) NOT NULL,
-  `car` float unsigned,
-  `domestic` float unsigned,
-  `education` float unsigned,
-  `entertainment` float unsigned,
-  `fin` float unsigned,
-  `game` float unsigned,
-  `international` float unsigned,
-  `internet` float unsigned,
-  `military` float unsigned,
-  `property` float unsigned,
-  `social` float unsigned,
-  `sports` float unsigned,
-  `tech` float unsigned,
-  `women` float unsigned,
+  `car` float unsigned DEFAULT 10,
+  `domestic` float unsigned DEFAULT 10,
+  `education` float unsigned DEFAULT 10,
+  `entertainment` float unsigned DEFAULT 10,
+  `fin` float unsigned DEFAULT 10,
+  `game` float unsigned DEFAULT 10,
+  `international` float unsigned DEFAULT 10,
+  `internet` float unsigned DEFAULT 10,
+  `military` float unsigned DEFAULT 10,
+  `property` float unsigned DEFAULT 10,
+  `social` float unsigned DEFAULT 10,
+  `sports` float unsigned DEFAULT 10,
+  `tech` float unsigned DEFAULT 10,
+  `women` float unsigned DEFAULT 10,
   KEY `usrname` (`usrname`),
   CONSTRAINT `cashacc_ibfk_2` FOREIGN KEY (`usrname`) REFERENCES `account` (`usrname`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
