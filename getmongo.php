@@ -28,7 +28,7 @@ foreach ($cursor as $document) {
 
 	if (in_array($title, $temp))
 		continue;
-	array_push($temp,$temp);
+	array_push($temp,$title);
 	array_push($arr,$document);
 	$i++;
 	if ($i==10)
