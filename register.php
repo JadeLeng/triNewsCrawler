@@ -18,7 +18,7 @@ $mysqli = new mysqli($db_host, $db_user, $db_pwd, $db_name);
 if(!$mysqli ){
     echo mysqli_connect_error();
 }
-$sql = "INSERT INTO `account` (`usrname`, `pwd`, `email`)VALUES (\"".$usrname."\", \"".$pwd."\", \"".$email.\"`)";
+$sql = "INSERT INTO `account` (`usrname`, `pwd`, `email`) VALUES (\"".$usrname."\", \"".$pwd."\", \"".$email."\")";
 echo $sql;
 
 $result = $mysqli->query("set names utf8");
@@ -32,7 +32,7 @@ if($result === false){//执行失败
 else{
 	echo json_encode("success");
 
-	$sql = "INSERT INTO likeacc (usrname)VALUES (`".$usrname."`)";
+	$sql = "INSERT INTO likeacc (usrname)VALUES (\"".$usrname."\")";
 	$result = $mysqli->query("set names utf8");
 	$result = $mysqli->query($sql);
 }
