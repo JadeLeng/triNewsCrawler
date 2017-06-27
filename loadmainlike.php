@@ -8,7 +8,7 @@ $db_pwd = '250.250.';
 
 
 $usrname=$_POST['usrname'];
-$type=$_POST['type'];
+//$type=$_POST['type'];
 //$email = $_POST['email'];
 
 
