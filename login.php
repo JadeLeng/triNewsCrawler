@@ -18,7 +18,7 @@ $mysqli = new mysqli($db_host, $db_user, $db_pwd, $db_name);
 if(!$mysqli ){
     echo mysqli_connect_error();
 }
-$sql = "SELECT `pwd` FROM `account` WHERE `usrname`=`".$usrname."`";
+$sql = "SELECT `pwd` FROM `account` WHERE `usrname`=\"".$usrname."\"";
 //echo $sql;
 
 $result = $mysqli->query("set names utf8");
