@@ -2,9 +2,9 @@
 <?php
 
 $collection = isset($_POST['collection']) ? $_POST['collection'] : 'International';
-
+//echo $collection;
 $queryname = 'NewsDB.'.$collection;
-
+//echo $queryname;
 $manager = new MongoDB\Driver\Manager("mongodb://localhost:27017");  
 
 // 插入数据
@@ -22,10 +22,11 @@ $cursor = $manager->executeQuery($queryname, $query);
 $i = 0;
 $arr = array();
 $temp = array();
-
+//echo $query;
+//echo $cursor->title;
 foreach ($cursor as $document) {
 	$title = $document->title;
-
+	//echo $title;
 	if (in_array($title, $temp))
 		continue;
 	array_push($temp,$temp);
