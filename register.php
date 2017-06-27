@@ -25,7 +25,7 @@ $result = $mysqli->query("set names utf8");
 $result = $mysqli->query($sql);
 
 if($result === false){//执行失败
-    echo $mysqli->error;
+    echo json_encode($mysqli->error);
     $mysqli->close();
     return;
 }
