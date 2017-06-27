@@ -19,7 +19,7 @@ if(!$mysqli ){
     echo mysqli_connect_error();
 }
 $sql = "INSERT INTO `account` (`usrname`, `pwd`, `email`) VALUES (\"".$usrname."\", \"".$pwd."\", \"".$email."\")";
-echo $sql;
+//echo $sql;
 
 $result = $mysqli->query("set names utf8");
 $result = $mysqli->query($sql);
