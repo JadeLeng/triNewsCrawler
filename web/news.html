@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>News Website</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/small-business.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.url.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquerysession.js"></script>
+    <script type="text/javascript">
+        //var type = 'Fin';
+        var source = $.url.param("source") ? $.url.param("source") : 'netease';
+        var oid = $.url.param("oid") ? $.url.param("oid") : '5950a6982f911cb7b881ffda';
+        var type = $.url.param("type") ? $.url.param("type") : 'Fin';
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--
+                <a class="navbar-brand" href="#">
+                    <img src="http://placehold.it/150x50&text=Logo" alt="">
+                </a>
+                -->
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./classnews.html?type=Fin&name=财经">财经</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Social&name=社会">社会</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Entertainment&name=娱乐">娱乐</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Military&name=军事">军事</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Domestic&name=国内">国内</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=International&name=国际">国际</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Tech&name=科技">科技</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Internet&name=互联网">互联网</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Property&name=房产">房产</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Women&name=女性">女人</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Sports&name=体育">体育</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Education&name=教育">教育</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Car&name=汽车">汽车</a>
+                    </li>
+                    <li>
+                        <a href="./classnews.html?type=Game&name=游戏">游戏</a>
+                    </li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right" id="loginbtn">
+                    <script type="text/javascript">
+                        var a = document.createElement('a');
+
+                        var ul =document.getElementById("loginbtn");
+                        console.log(ul);
+                        var li = document.createElement('li');
+                        if ($.session.get('user')){
+                            console.log("login");
+                            a.innerHTML = "<a href=\"#\" onclick=\"logout()\">登出</a>";
+
+                            li.appendChild(a);
+                            ul.appendChild(li);
+                            //$('#logornot').innerHTML="<a href=\"#\" onclick=\"logout()\">登出</a>";
+                        }
+                        else {
+                            console.log("not login");
+                            a.innerHTML = "<a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\">登录</a>";
+                            console.log(a);
+                            li.appendChild(a);
+                            ul.appendChild(li);
+                            //$('#logornot').innerHTML="<a href=\"#\" data-toggle=\"modal\" data-target=\"#myModal\">登录</a>";
+                        }
+                        function logout(){
+                            $.session.remove('user');
+                            window.location.href = "index.html";
+                        }
+                    </script>
+                    <li>
+                        <!--
+                        <a href="#">登录</a>
+                        -->
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <!-- .col-md-8 -->
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="title">
+                    </div>
+                    <div class="panel-body">
+                    <script type='text/javascript' src="js/newscontent.js"></script>
+                        <div class = "row">
+                            <div class="col-md-4">
+                                <ul class="list-unstyled" id="newsdate"></ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-unstyled" id="newssource"></ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="list-unstyled" id="sourceurl"></ul>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class ="row">
+                        <center>
+                            <ul class="list-unstyled" id="newscontent"></ul>
+                            <ul class="list-unstyled" id="newsimg"></ul>
+                        </center>
+                            
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-8 -->
+            
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    Thank you for coming to my news website. Feel free to contact me!
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        
+
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Jade.L 2017</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    
+
+   
+
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <!--
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                
+                <h4 class="modal-title" id="myModalLabel">欢迎访问本新闻网站！</h4>
+                -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" id="signin-li">
+                        <a href="#signin-tab" role="tab" data-toggle="tab">登陆</a>
+                    </li>
+                    <li id="signup-li"><a href="#signup-tab" role="tab" data-toggle="tab">注册</a></li>
+                </ul>
+                
+            </div>
+            <div class="modal-body">
+                <div class="tab-content" id="signin-signup-tab">
+                    <div class="tab-pane" id="signup-tab">
+                        <form action="" class="form col-md-12 center-block" id = "form1" >
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="emailtext" placeholder="请输入邮箱" title="邮箱正确格式：xxx@xxx.com" required pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})">
+                            </div>
+                            <div class="form-group">
+                                <input id="password1" type="password" class="form-control " placeholder="请输入登陆密码" required onblur="" ="checkPasswords()">
+                            </div>
+                            <div class="form-group">
+                                <input id="password2" type="password" class="form-control" placeholder="请再次输入密码" required onblur="" ="checkPasswords()">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入用户昵称" id="userregid">
+                            </div>
+
+                            
+                            
+                            <div class="form-group">
+                                <center>
+                                    <button type="submit" class="btn btn-default" id='registerbtn' rel="popover" data-content="注册成功" onclick="register()">注册</button>
+                                </center>
+                            </div>
+                            <script type='text/javascript' src="js/logandreg.js"></script>
+                            <script>
+                                    document.getElementById('password1').onkeyup=function(){
+                                        
+                                        var password = $("#password1").val();
+                                        //console.log(password);
+                                        var confirm_password = $("#password2").val();
+                                        var passl = document.getElementById("password1");
+                                        var pass2 = document.getElementById("password2");
+                                        if (password.length<6){
+                                            console.log(password);
+                                            passl.setCustomValidity("密码长度小于六位！"); 
+                                            password = $("#password1").val();
+                                        } 
+
+                                        else{
+                                               passl.setCustomValidity('');  
+                                        }
+                                    }  
+
+
+                                    document.getElementById('password2').onkeyup=function(){
+                                        
+                                        var password = $("#password1").val();
+                                        //console.log(password);
+                                        var confirm_password = $("#password2").val();
+                                        var passl = document.getElementById("password1");
+                                        var pass2 = document.getElementById("password2");
+                                        if (confirm_password.length<6){
+                                            pass2.setCustomValidity("密码长度小于六位！"); 
+                                            password = $("#password1").val();
+                                            confirm_password = $("#password2").val();
+                                        } 
+                                        else if(password != confirm_password) {
+                                                //console.log("notlike!");
+                                                pass2.setCustomValidity("两次密码必须输入一致！"); 
+                                                password = $("#password1").val();
+                                                confirm_password = $("#password2").val();
+                                        }
+
+                                        else{
+                                               pass2.setCustomValidity('');  
+                                        }
+                                    }
+                                    /*
+                                    document.querySelector('#form1').addEventListener('submit',function(e){    
+                                    //ajax
+                                    console.log("addEventListener");
+                                    e.preventDefault();
+                                    var flag=register();
+                                    
+                                    },flag);  
+                                    */
+
+
+                                function checkPasswords() {
+                                    console.log("checkPasswords!");
+
+                                      
+                                    /*
+                                    var passl = document.getElementById("password1");  
+                                    var pass2 = document.getElementById("password2");  
+                                    if (passl.value != pass2.value)  
+                                        passl.setCustomValidity("两次密码必须输入一致！");  
+                                    else  
+                                        passl.setCustomValidity('');  
+                                    */
+                                }  
+                          
+                                function check() {  
+                                    console.log("check");
+                                    
+                                    return register();
+                                    //document.getElementById('registerbtn').disabled = 'disabled';  
+                                    //event.preventDefault();
+                                    //return false;
+                                }  
+                            </script>  
+                        </form>
+                    </div>
+                    <div class="tab-pane active" id="signin-tab">
+                        <form action="" class="form col-md-12 center-block">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="请输入账号" id="loginusrname">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="请输入登录密码" id="loginpwd">
+                            </div>
+                            <div class="form-group">
+                                <center>
+                                    <button type="submit" class="btn btn-default" onclick="login()">立即登录</button>
+                                </center>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
