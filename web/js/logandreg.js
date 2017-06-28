@@ -36,6 +36,7 @@ function register(){
         alert("两次输入密码不一致！");
         return flag;
     }
+    //alert("连接服务器中，请稍等！");
 
 	$.ajax({
         type: "post",
@@ -49,6 +50,7 @@ function register(){
             var data = JSON.parse(msg);
             console.log(data);
             index = data.indexOf("Duplicate");
+            alert("连接服务器成功！")
             if (index != -1){
                 newindex = data.indexOf("PRIMARY");
                 if (newindex != -1){
@@ -73,10 +75,11 @@ function register(){
                 window.location.reload();
                 flag = true;
             }
+            return flag;
         },
         error: function() {}
     });
-
+    alert("看来连接有点慢...");
     return flag;
 }
 
@@ -86,7 +89,7 @@ function login(){
 
     //while (true)
     console.log(usrname);
-    //alert("正在登录，请稍等。");
+    alert("正在登录，请稍等。");
 
     $.ajax({
         type: "post",
@@ -123,6 +126,8 @@ function login(){
         },
         error: function() {}
     });
+
+    alert("看来连接有点慢...");
 
     return false;
 

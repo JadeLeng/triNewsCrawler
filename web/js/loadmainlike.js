@@ -5,7 +5,7 @@ $(function(){
 		var usrname = $.session.get('user');
 
 		$.ajax({
-			url: "http://120.24.57.3/triNewsCrawler/loadmainlike.php",
+			url: "http://120.24.57.3/triNewsCrawler/php/loadmainlike.php",
 			//datatype: 'json',
 			type: "post",
 			data: {

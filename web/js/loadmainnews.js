@@ -22,7 +22,7 @@ $(function() {
 var loadinternational = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'International'
         },
@@ -65,7 +65,7 @@ var loadmain = function(){
 var loaddomestic = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Domestic'
         },
@@ -94,7 +94,7 @@ var loaddomestic = function(){
 var loadsocial = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Social'
         },
@@ -123,7 +123,7 @@ var loadsocial = function(){
 var loadentertainment = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Entertainment'
         },
@@ -152,7 +152,7 @@ var loadentertainment = function(){
 var loadfinance = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Fin'
         },
@@ -181,7 +181,7 @@ var loadfinance = function(){
 var loadmilitary = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Military'
         },
@@ -210,7 +210,7 @@ var loadmilitary = function(){
 var loadsports = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Sports'
         },
@@ -239,7 +239,7 @@ var loadsports = function(){
 var loadtech = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Tech'
         },
@@ -268,7 +268,7 @@ var loadtech = function(){
 var loadproperty = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Property'
         },
@@ -297,7 +297,7 @@ var loadproperty = function(){
 var loadeducation = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Education'
         },
@@ -326,7 +326,7 @@ var loadeducation = function(){
 var loadwoman = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Women'
         },
@@ -355,7 +355,7 @@ var loadwoman = function(){
 var loadinternet = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Internet'
         },
@@ -384,7 +384,7 @@ var loadinternet = function(){
 var loadcar = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Car'
         },
@@ -413,7 +413,7 @@ var loadcar = function(){
 var loadgame = function(){
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/getmongo.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/getmongo.php",
         data: {
         	collection : 'Game'
         },
