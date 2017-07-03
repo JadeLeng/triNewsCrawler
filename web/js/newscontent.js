@@ -9,7 +9,7 @@ $(function () {
 		console.log(mysource);
 		console.log(myoid);
 		$.ajax({
-			url: "http://120.24.57.3/triNewsCrawler/newscontent.php",
+			url: "http://120.24.57.3/triNewsCrawler/php/newscontent.php",
 			//datatype: 'json',
 			type: "post",
 			data: {

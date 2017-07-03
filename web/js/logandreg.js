@@ -40,7 +40,7 @@ function register(){
 
 	$.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/register.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/register.php",
         data: {
             usrname: regid,
             pwd: pwd,
@@ -93,7 +93,7 @@ function login(){
 
     $.ajax({
         type: "post",
-        url: "http://120.24.57.3/triNewsCrawler/login.php",
+        url: "http://120.24.57.3/triNewsCrawler/php/login.php",
         data: {
             usrname: usrname,
             pwd: pwd
